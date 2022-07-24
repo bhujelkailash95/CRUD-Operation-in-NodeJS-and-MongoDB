@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" 
+    crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+  Edit News
+  <%=values%>
+    <div class="container">
+        <form style="padding: 5rem 25rem;" action='/editNews/<%= values._id%>' method="post">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Title</label>
+              <input type="text" 
+              class="form-control" 
+              id="title" 
+              aria-describedby="emailHelp"
+              name="title"
+              values=<%=values.title%>
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Description</label>
+              <input type="text" class="form-control" id="description" name="description" values=<%=values.description%> />
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Author</label>
+                <input type="text" class="form-control" id="author" name="author" values=<%=values.author%> />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Type</label>
+                <input type="text" class="form-control" id="type" name="type" values=<%=values.type%> />
+              </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+</body>
+</html>
